@@ -1,4 +1,3 @@
-git
 # 3D Crypto Orderbook Visualizer
 
 Real-time, interactive 3D visualization of crypto orderbooks across multiple venues.
