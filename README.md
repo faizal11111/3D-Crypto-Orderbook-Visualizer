@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+git
+# 3D Crypto Orderbook Visualizer
 
-## Getting Started
+Real-time, interactive 3D visualization of crypto orderbooks across multiple venues.
 
-First, run the development server:
+---
 
-```bash
+## Features
+
+- **3D Orderbook:** Price (X), quantity (Y), time (Z) axes.
+- **Real-time Data:** Binance supported (others structured, see `useOrderbookData.ts`).
+- **Interactive:** Rotate, zoom, pan with mouse/touch.
+- **Venue Filtering:** Show/hide Binance, OKX, Bybit, Deribit.
+- **Pressure Zones:** Highlight clusters with high order volume.
+- **Filters:** Price range, quantity threshold, timeframe selection.
+- **Responsive:** Fast and mobile-friendly.
+
+---
+
+## How to Run Locally
+
+1. **Clone the repo:**
+git clone https://github.com/your-username/3d-orderbook.git
+cd 3d-orderbook
+
+2. **Install dependencies:**
+npm install
+
+
+3. **Start the dev server:**
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. **Open in browser:**
+Go to http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Technical Notes
 
-To learn more about Next.js, take a look at the following resources:
+- **APIs used:** Binance orderbook REST + WebSocket API.
+- **Libraries:** React, Next.js, @react-three/fiber (Three.js), @react-three/drei, TypeScript.
+- **Assumptions:**
+- Only Binance is fully implemented for real-time data.
+- Each price/time bin is a bar; pressure detection uses a simple volume threshold.
+- Responsive layout covers desktop/mobile.
+- **Planned/Future:**
+- Full venue support (OKX, Bybit, Deribit).
+- Advanced analytics (order flow, matching animation).
+- Export/share chart images.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Why These Choices?
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Three.js/React Three Fiber:** Smooth, performant 3D rendering in React.
+- **Next.js:** Easy routing, SSR/SSG, deployment simplicity.
+- **Hooks/Context:** Clean state management for venues, filters, and real-time updates.
