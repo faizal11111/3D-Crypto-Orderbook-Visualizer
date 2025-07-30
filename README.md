@@ -18,8 +18,7 @@ Real-time, interactive 3D visualization of crypto orderbooks across multiple ven
 
 ## How to Run Locally
 
-1. **Clone the repo:**
-git clone https://github.com/your-username/3d-orderbook.git
+1. **Clone the repo:** https://github.com/faizal11111/3D-Crypto-Orderbook-Visualizer
 cd 3d-orderbook
 
 2. **Install dependencies:**
